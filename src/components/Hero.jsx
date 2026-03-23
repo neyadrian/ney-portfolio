@@ -54,8 +54,7 @@ export default function Hero() {
         <div className="img-frame">
           <div className="img-glow" />
           <div className="img-border">
-            <img src="Design sem nome (2).png" alt="Ney Adrian"
-              onError={e => { e.target.style.display = "none"; e.target.parentNode.innerHTML += "👨‍💻"; }} />
+            <img src="/ney-portfolio/foto.jpeg" alt="Ney Adrian" />
           </div>
           <div className="img-corner tl" />
           <div className="img-corner tr" />
