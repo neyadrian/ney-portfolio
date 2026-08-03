@@ -19,5 +19,5 @@ export default function App() {
         <Footer />
       </LanguageProvider>
     </ThemeProvider>
-  );  
+  );
 }
