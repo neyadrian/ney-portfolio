@@ -1,0 +1,97 @@
+  /* ============================================
+    HEADER / NAV
+    ============================================ */
+  .header {
+    padding: 0 5%;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+
+  .header.scrolled {
+    background: var(--header-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .logo span { color: var(--accent); }
+
+  nav ul { display: flex; gap: 34px; }
+  nav a {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-family: var(--font-mono);
+    transition: color 0.3s;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  nav a:hover { color: var(--accent); }
+  nav a:hover::after { width: 100%; }
+
+  /* Theme + language controls */
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 7px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    cursor: none;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .lang-toggle:hover { border-color: var(--accent); }
+  .lang-toggle .active { color: var(--accent); font-weight: 700; }
+  .lang-toggle .divider { color: var(--border); }
+
+  .theme-toggle {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    font-size: 1rem;
+    cursor: none;
+    transition: border-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: rotate(20deg);
+  }
+
+  @media (max-width: 900px) {
+    .header-controls { gap: 8px; }
+    .lang-toggle { padding: 6px 10px; }
+  }

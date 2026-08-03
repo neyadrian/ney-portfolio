@@ -1,0 +1,41 @@
+/* ============================================
+   THEME TOKENS — dark (default) & light
+   ============================================ */
+:root {
+  --bg: #08090c;
+  --bg2: #0e1016;
+  --card: #12141a;
+  --card2: #1a1d26;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8e9ef;
+  --muted: #8b90a0;
+  --accent: #2979ff;
+  --accent2: #00e5ff;
+  --accent-dim: rgba(41, 121, 255, 0.08);
+  --accent-glow: rgba(41, 121, 255, 0.35);
+  --shadow: rgba(0, 0, 0, 0.45);
+  --header-bg: rgba(8, 9, 12, 0.94);
+
+  --font-body: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #f6f7fa;
+  --bg2: #eceef3;
+  --card: #ffffff;
+  --card2: #f1f3f8;
+  --border: rgba(15, 18, 30, 0.09);
+  --text: #14161c;
+  --muted: #5c6270;
+  --accent: #1a5fe0;
+  --accent2: #0092a8;
+  --accent-dim: rgba(26, 95, 224, 0.06);
+  --accent-glow: rgba(26, 95, 224, 0.18);
+  --shadow: rgba(20, 22, 35, 0.1);
+  --header-bg: rgba(246, 247, 250, 0.88);
+
+  color-scheme: light;
+}
