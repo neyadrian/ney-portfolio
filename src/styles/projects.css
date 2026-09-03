@@ -3,9 +3,13 @@
    ============================================ */
 .projects-section { position: relative; }
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .project-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: var(--border);
+  border: none;
   border-radius: 18px;
   padding: 30px;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -15,31 +19,47 @@
   cursor: none;
   position: relative;
   overflow: hidden;
+  z-index: 1;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, transparent 75%, var(--accent) 100%);
+  animation: spin 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -2;
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  transform: scaleX(0);
-  transition: transform 0.4s;
+  inset: 1px;
+  background: var(--card);
+  border-radius: 17px;
+  z-index: -1;
+  transition: background 0.4s ease;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: var(--accent-glow);
-  box-shadow: 0 30px 60px var(--shadow), 0 0 0 1px var(--accent-dim);
+  box-shadow: 0 30px 60px var(--shadow);
 }
-.project-card:hover::after { transform: scaleX(1); }
 
 /* Featured card — CommitCard */
 .project-card-featured {
   margin-bottom: 24px;
-  background: linear-gradient(160deg, var(--card) 55%, var(--accent-dim));
-  border-color: var(--accent-glow);
 }
+.project-card-featured::after {
+  background: linear-gradient(160deg, var(--card) 55%, var(--accent-dim));
+}
+
 
 .featured-badge {
   position: absolute;

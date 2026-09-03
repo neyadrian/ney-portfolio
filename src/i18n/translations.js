@@ -14,9 +14,10 @@ const translations = {
       ctaProjects: "View Projects →",
       ctaLinkedin: "LinkedIn ↗",
       scroll: "SCROLL",
-      terminalLabel: "latest commit",
-      terminalCmd: "git log --oneline -1",
-      terminalOutput: "feat: ship CommitCard to production 🚀",
+      terminalLabel: "latest commits",
+      terminalCmd: "git log --oneline -2",
+      terminalOutput1: "feat: ship CommitCard to production 🚀",
+      terminalOutput2: "feat: implement inventory for Geladão Bebidas 📦",
     },
     skills: {
       label: "Technologies",
@@ -59,6 +60,10 @@ const translations = {
           title: "Product Lookup System",
           desc: "Java client-server app for product price lookups over TCP and UDP sockets, with a central catalog and multi-threaded connections.",
         },
+        geladao: {
+          title: "Geladão Bebidas Inventory",
+          desc: "Inventory management system for Geladão Bebidas.",
+        },
       },
     },
     footer: {
@@ -86,9 +91,10 @@ const translations = {
       ctaProjects: "Ver Projetos →",
       ctaLinkedin: "LinkedIn ↗",
       scroll: "ROLAR",
-      terminalLabel: "último commit",
-      terminalCmd: "git log --oneline -1",
-      terminalOutput: "feat: publica o CommitCard em produção 🚀",
+      terminalLabel: "últimos commits",
+      terminalCmd: "git log --oneline -2",
+      terminalOutput1: "feat: publica o CommitCard em produção 🚀",
+      terminalOutput2: "feat: implementa estoque do Geladão Bebidas 📦",
     },
     skills: {
       label: "Tecnologias",
@@ -130,6 +136,10 @@ const translations = {
         supermercado: {
           title: "Sistema de Consulta de Produtos",
           desc: "Aplicação cliente-servidor em Java para consulta de preços via sockets TCP e UDP, com catálogo central e conexões multi-thread.",
+        },
+        geladao: {
+          title: "Estoque Geladão Bebidas",
+          desc: "Sistema de gerenciamento de estoque para o Geladão Bebidas.",
         },
       },
     },

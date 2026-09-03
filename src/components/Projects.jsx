@@ -45,6 +45,12 @@ const projectMeta = [
     tags: ["Java", "Sockets", "TCP/UDP"],
     link: "https://github.com/neyadrian/sistema-supermercado",
   },
+  {
+    key: "geladao",
+    icon: "📦",
+    tags: ["Java", "Spring Boot", "Estoque"],
+    link: "https://github.com/neyadrian/estoque-geladao-bebidas",
+  },
 ];
 
 export default function Projects() {

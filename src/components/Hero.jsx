@@ -73,7 +73,8 @@ export default function Hero() {
             <span className="prompt">$</span>
             {t.hero.terminalCmd}
           </p>
-          <p className="terminal-output">{t.hero.terminalOutput}</p>
+          <p className="terminal-output">{t.hero.terminalOutput1}</p>
+          <p className="terminal-output">{t.hero.terminalOutput2}</p>
         </div>
       </div>
 
