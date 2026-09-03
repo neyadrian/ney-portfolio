@@ -38,14 +38,7 @@ export default function Header() {
           <span className={lang === "pt" ? "active" : ""}>PT</span>
         </button>
 
-        <button
-          type="button"
-          className="theme-toggle"
-          onClick={toggleTheme}
-          aria-label={theme === "dark" ? t.themeToggle.toLight : t.themeToggle.toDark}
-        >
-          <i className={theme === "dark" ? "ri-sun-line" : "ri-moon-line"} />
-        </button>
+
       </div>
     </header>
   );

@@ -22,20 +22,3 @@
   color-scheme: dark;
 }
 
-[data-theme="light"] {
-  --bg: #f6f7fa;
-  --bg2: #eceef3;
-  --card: #ffffff;
-  --card2: #f1f3f8;
-  --border: rgba(15, 18, 30, 0.09);
-  --text: #14161c;
-  --muted: #5c6270;
-  --accent: #707070;
-  --accent2: #909090;
-  --accent-dim: rgba(112, 112, 112, 0.06);
-  --accent-glow: rgba(112, 112, 112, 0.18);
-  --shadow: rgba(20, 22, 35, 0.1);
-  --header-bg: rgba(246, 247, 250, 0.88);
-
-  color-scheme: light;
-}

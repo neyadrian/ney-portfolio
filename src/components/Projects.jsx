@@ -4,52 +4,53 @@ import { useLanguage } from "../context/LanguageContext";
 const projectMeta = [
   {
     key: "commitcard",
-    icon: "🪪",
+    icon: "ri-id-card-line",
     tags: ["Java", "Spring Boot", "GitHub OAuth"],
     link: "https://commitcard.com.br",
     featured: true,
   },
   {
     key: "banco",
-    icon: "🏦",
+    icon: "ri-bank-line",
     tags: ["Java", "Swing", "MySQL", "MVC"],
     link: "https://github.com/neyadrian/projeto-banc-rio",
   },
   {
     key: "gps",
-    icon: "🗺️",
+    icon: "ri-map-2-line",
     tags: ["C", "Graphs", "Dijkstra"],
     link: "https://github.com/neyadrian/sistema-gps",
   },
   {
     key: "cinema",
-    icon: "🎬",
+    icon: "ri-film-line",
     tags: ["Java", "OOP", "Arrays"],
     link: "https://github.com/neyadrian/sistema-cinema",
   },
   {
     key: "rh",
-    icon: "🧑‍💼",
+    icon: "ri-group-line",
     tags: ["Java", "OOP", "Collections"],
     link: "https://github.com/neyadrian/gestao-rh",
   },
   {
     key: "logitrack",
-    icon: "🚛",
+    icon: "ri-truck-line",
     tags: ["Java", "Design Patterns", "SOLID"],
     link: "https://github.com/neyadrian/Logi-Track",
   },
   {
     key: "supermercado",
-    icon: "🛒",
+    icon: "ri-shopping-cart-2-line",
     tags: ["Java", "Sockets", "TCP/UDP"],
     link: "https://github.com/neyadrian/sistema-supermercado",
   },
   {
     key: "geladao",
-    icon: "📦",
+    icon: "ri-box-3-line",
     tags: ["Java", "Spring Boot", "Estoque"],
-    link: "https://github.com/neyadrian/estoque-geladao-bebidas",
+    link: "https://github.com/neyadrian/geladao-bebidas",
+    featured: true,
   },
 ];
 
@@ -74,7 +75,7 @@ export default function Projects() {
     return () => observer.disconnect();
   }, []);
 
-  const featured = projectMeta.find((p) => p.featured);
+  const featuredProjects = projectMeta.filter((p) => p.featured);
   const rest = projectMeta.filter((p) => !p.featured);
 
   return (
@@ -84,17 +85,18 @@ export default function Projects() {
         {t.projects.title} <span className="dim">{t.projects.titleDim}</span>
       </h2>
 
-      {featured && (
+      {featuredProjects.map((featured, i) => (
         <a
+          key={featured.key}
           href={featured.link}
           target="_blank"
           rel="noreferrer"
-          className="project-card project-card-featured fade-up stagger-2"
+          className={`project-card project-card-featured fade-up stagger-${Math.min(i + 2, 5)}`}
         >
-          <span className="featured-badge">{t.projects.featured}</span>
           <div className="project-header">
-            <div className="project-icon">{featured.icon}</div>
+            <div className="project-icon"><i className={featured.icon}></i></div>
             <div className="project-tags">
+              <span className="featured-badge">{t.projects.featured}</span>
               {featured.tags.map((tag) => (
                 <span key={tag} className="tag">{tag}</span>
               ))}
@@ -102,9 +104,9 @@ export default function Projects() {
           </div>
           <h3 className="project-title">{t.projects.items[featured.key].title}</h3>
           <p className="project-desc">{t.projects.items[featured.key].desc}</p>
-          <span className="project-link">{t.projects.visitSite}</span>
+          <span className="project-link">{t.projects.visitSite} <i className="ri-arrow-right-line"></i></span>
         </a>
-      )}
+      ))}
 
       <div className="projects-grid">
         {rest.map((p, i) => (
@@ -113,7 +115,7 @@ export default function Projects() {
             className={`project-card fade-up stagger-${Math.min(i + 3, 5)}`}
           >
             <div className="project-header">
-              <div className="project-icon">{p.icon}</div>
+              <div className="project-icon"><i className={p.icon}></i></div>
               <div className="project-tags">
                 {p.tags.map((tag) => (
                   <span key={tag} className="tag">{tag}</span>
@@ -123,7 +125,7 @@ export default function Projects() {
             <h3 className="project-title">{t.projects.items[p.key].title}</h3>
             <p className="project-desc">{t.projects.items[p.key].desc}</p>
             <a href={p.link} target="_blank" rel="noreferrer" className="project-link">
-              {t.projects.viewGithub}
+              {t.projects.viewGithub} <i className="ri-arrow-right-line"></i>
             </a>
           </div>
         ))}

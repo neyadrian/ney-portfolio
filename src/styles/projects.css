@@ -62,8 +62,6 @@
 
 
 .featured-badge {
-  position: absolute;
-  top: 24px; right: 30px;
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 1px;
@@ -73,6 +71,8 @@
   border: 1px solid var(--accent-glow);
   padding: 4px 10px;
   border-radius: 100px;
+  display: flex;
+  align-items: center;
 }
 
 .project-header { display: flex; justify-content: space-between; align-items: flex-start; }
@@ -99,7 +99,7 @@
   letter-spacing: 0.5px;
 }
 
-.project-title { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; }
+.project-title { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
 .project-desc { color: var(--muted); font-size: 0.86rem; line-height: 1.7; font-family: var(--font-mono); flex: 1; }
 
 .project-link {

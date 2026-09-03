@@ -11,8 +11,8 @@ const translations = {
       titleLine: "Building the logic behind",
       titleHighlight: "innovation.",
       desc: "Back-end developer working with Java and Spring Boot. Software Engineering student at IFCE.",
-      ctaProjects: "View Projects →",
-      ctaLinkedin: "LinkedIn ↗",
+      ctaProjects: "View Projects",
+      ctaLinkedin: "LinkedIn",
       scroll: "SCROLL",
       terminalLabel: "latest commits",
       terminalCmd: "git log --oneline -2",
@@ -29,8 +29,8 @@ const translations = {
       title: "Recent",
       titleDim: "projects",
       featured: "Featured",
-      visitSite: "Visit site →",
-      viewGithub: "View on GitHub →",
+      visitSite: "Visit site",
+      viewGithub: "View on GitHub",
       items: {
         commitcard: {
           title: "Commit Card",
@@ -88,8 +88,8 @@ const translations = {
       titleLine: "Construindo a lógica por trás da",
       titleHighlight: "inovação.",
       desc: "Desenvolvedor Back-End com Java e Spring Boot. Estudante de Engenharia de Software pelo IFCE.",
-      ctaProjects: "Ver Projetos →",
-      ctaLinkedin: "LinkedIn ↗",
+      ctaProjects: "Ver Projetos",
+      ctaLinkedin: "LinkedIn",
       scroll: "ROLAR",
       terminalLabel: "últimos commits",
       terminalCmd: "git log --oneline -2",
@@ -106,8 +106,8 @@ const translations = {
       title: "Projetos",
       titleDim: "recentes",
       featured: "Destaque",
-      visitSite: "Acessar site →",
-      viewGithub: "Ver no GitHub →",
+      visitSite: "Acessar site",
+      viewGithub: "Ver no GitHub",
       items: {
         commitcard: {
           title: "Commit Card",

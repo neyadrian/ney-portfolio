@@ -37,7 +37,7 @@ export default function Hero() {
 
         <div className="btn-group">
           <a href="#projects" className="btn btn-primary">
-            {t.hero.ctaProjects}
+            {t.hero.ctaProjects} <i className="ri-arrow-right-line"></i>
           </a>
           <a
             href="https://www.linkedin.com/in/ney-adrian-casimiro-oliveira-567b902bb/"
@@ -45,6 +45,7 @@ export default function Hero() {
             rel="noreferrer"
             className="btn btn-ghost"
           >
+            <i className="ri-linkedin-fill"></i>
             {t.hero.ctaLinkedin}
           </a>
         </div>
