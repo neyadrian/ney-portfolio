@@ -1,0 +1,4 @@
+Coloque aqui a sua foto com o nome exato: foto.jpeg
+(é o arquivo que o Hero.jsx usa em <img src="/ney-portfolio/foto.jpeg" />)
+
+Depois de adicionar a foto, pode apagar este arquivo.
