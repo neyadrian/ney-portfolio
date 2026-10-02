@@ -11,8 +11,8 @@ const translations = {
       titleLine: "Building the logic behind",
       titleHighlight: "innovation.",
       desc: "Back-end developer working with Java and Spring Boot. Software Engineering student at IFCE.",
-      ctaProjects: "View Projects",
       ctaLinkedin: "LinkedIn",
+      ctaWhatsapp: "WhatsApp",
       scroll: "SCROLL",
       terminalLabel: "latest commits",
       terminalCmd: "git log --oneline -2",
@@ -23,6 +23,13 @@ const translations = {
       label: "Technologies",
       title: "What I",
       titleDim: "work with",
+    },
+    contributions: {
+      label: "GitHub",
+      title: "A year of",
+      titleDim: "commits",
+      unit: "contribution",
+      unitPlural: "contributions",
     },
     projects: {
       label: "Portfolio",
@@ -68,6 +75,7 @@ const translations = {
     },
     footer: {
       builtBy: "Built by Ney Adrian",
+      tagline: "Made for builders who care about details.",
     },
     themeToggle: {
       toLight: "Switch to light mode",
@@ -88,8 +96,8 @@ const translations = {
       titleLine: "Construindo a lógica por trás da",
       titleHighlight: "inovação.",
       desc: "Desenvolvedor Back-End com Java e Spring Boot. Estudante de Engenharia de Software pelo IFCE.",
-      ctaProjects: "Ver Projetos",
       ctaLinkedin: "LinkedIn",
+      ctaWhatsapp: "WhatsApp",
       scroll: "ROLAR",
       terminalLabel: "últimos commits",
       terminalCmd: "git log --oneline -2",
@@ -100,6 +108,13 @@ const translations = {
       label: "Tecnologias",
       title: "O que eu",
       titleDim: "uso",
+    },
+    contributions: {
+      label: "GitHub",
+      title: "Um ano de",
+      titleDim: "commits",
+      unit: "contribuição",
+      unitPlural: "contribuições",
     },
     projects: {
       label: "Portfólio",
@@ -145,6 +160,7 @@ const translations = {
     },
     footer: {
       builtBy: "Desenvolvido por Ney Adrian",
+      tagline: "Feito para quem se importa com os detalhes.",
     },
     themeToggle: {
       toLight: "Mudar para modo claro",

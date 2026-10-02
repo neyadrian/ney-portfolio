@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import FlowButton from "./FlowButton";
 
 const projectMeta = [
   {
@@ -86,11 +87,8 @@ export default function Projects() {
       </h2>
 
       {featuredProjects.map((featured, i) => (
-        <a
+        <div
           key={featured.key}
-          href={featured.link}
-          target="_blank"
-          rel="noreferrer"
           className={`project-card project-card-featured fade-up stagger-${Math.min(i + 2, 5)}`}
         >
           <div className="project-header">
@@ -104,8 +102,13 @@ export default function Projects() {
           </div>
           <h3 className="project-title">{t.projects.items[featured.key].title}</h3>
           <p className="project-desc">{t.projects.items[featured.key].desc}</p>
-          <span className="project-link">{t.projects.visitSite} <i className="ri-arrow-right-line"></i></span>
-        </a>
+          <FlowButton
+            text={t.projects.visitSite}
+            href={featured.link}
+            target="_blank"
+            rel="noreferrer"
+          />
+        </div>
       ))}
 
       <div className="projects-grid">
@@ -124,9 +127,12 @@ export default function Projects() {
             </div>
             <h3 className="project-title">{t.projects.items[p.key].title}</h3>
             <p className="project-desc">{t.projects.items[p.key].desc}</p>
-            <a href={p.link} target="_blank" rel="noreferrer" className="project-link">
-              {t.projects.viewGithub} <i className="ri-arrow-right-line"></i>
-            </a>
+            <FlowButton
+              text={t.projects.viewGithub}
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
+            />
           </div>
         ))}
       </div>

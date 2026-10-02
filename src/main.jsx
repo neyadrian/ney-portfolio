@@ -5,9 +5,12 @@ import "./styles/theme.css";
 import "./styles/base.css";
 import "./styles/header.css";
 import "./styles/hero.css";
+import "./styles/contributions.css";
+import "./styles/skyline.css";
 import "./styles/skills.css";
 import "./styles/projects.css";
 import "./styles/footer.css";
+import "./styles/flow-button.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

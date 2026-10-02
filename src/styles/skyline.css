@@ -1,0 +1,134 @@
+/* Contribution Skyline — Tailwind utilities scoped to .skyline */
+.skyline {
+  --color-background: var(--card);
+  --color-foreground: var(--text);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted);
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+.skyline *, .skyline *::before, .skyline *::after { box-sizing: border-box; }
+.skyline button { font-family: inherit; }
+.skyline.relative, .skyline .relative { position:relative; }
+.skyline.absolute, .skyline .absolute { position:absolute; }
+.skyline.w-full, .skyline .w-full { width:100%; }
+.skyline.rounded-xl, .skyline .rounded-xl { border-radius:12px; }
+.skyline.rounded-lg, .skyline .rounded-lg { border-radius:8px; }
+.skyline.rounded-md, .skyline .rounded-md { border-radius:6px; }
+.skyline.rounded, .skyline .rounded { border-radius:4px; }
+.skyline.rounded-\[2px\], .skyline .rounded-\[2px\] { border-radius:2px; }
+.skyline.border, .skyline .border { border-width:1px;border-style:solid; }
+.skyline.border-0, .skyline .border-0 { border-width:0; }
+.skyline.p-4, .skyline .p-4 { padding:16px; }
+.skyline.p-0, .skyline .p-0 { padding:0; }
+.skyline.p-0\.5, .skyline .p-0\.5 { padding:2px; }
+.skyline.font-sans, .skyline .font-sans { font-family:var(--font-body); }
+.skyline.font-normal, .skyline .font-normal { font-weight:400; }
+.skyline.font-semibold, .skyline .font-semibold { font-weight:600; }
+.skyline.mb-3, .skyline .mb-3 { margin-bottom:12px; }
+.skyline.m-0, .skyline .m-0 { margin:0; }
+.skyline.flex, .skyline .flex { display:flex; }
+.skyline.inline-flex, .skyline .inline-flex { display:inline-flex; }
+.skyline.grid, .skyline .grid { display:grid; }
+.skyline.block, .skyline .block { display:block; }
+.skyline.flex-wrap, .skyline .flex-wrap { flex-wrap:wrap; }
+.skyline.flex-1, .skyline .flex-1 { flex:1 1 0%; }
+.skyline.flex-col, .skyline .flex-col { flex-direction:column; }
+.skyline.items-center, .skyline .items-center { align-items:center; }
+.skyline.items-end, .skyline .items-end { align-items:flex-end; }
+.skyline.items-start, .skyline .items-start { align-items:flex-start; }
+.skyline.items-baseline, .skyline .items-baseline { align-items:baseline; }
+.skyline.justify-between, .skyline .justify-between { justify-content:space-between; }
+.skyline.gap-1\.5, .skyline .gap-1\.5 { gap:6px; }
+.skyline.gap-5, .skyline .gap-5 { gap:20px; }
+.skyline.gap-x-2, .skyline .gap-x-2 { column-gap:8px; }
+.skyline.gap-x-4, .skyline .gap-x-4 { column-gap:16px; }
+.skyline.gap-y-2, .skyline .gap-y-2 { row-gap:8px; }
+.skyline.gap-y-4, .skyline .gap-y-4 { row-gap:16px; }
+.skyline.text-\[12px\], .skyline .text-\[12px\] { font-size:12px; }
+.skyline.text-\[13px\], .skyline .text-\[13px\] { font-size:13px; }
+.skyline.text-\[14px\], .skyline .text-\[14px\] { font-size:14px; }
+.skyline.text-\[15px\], .skyline .text-\[15px\] { font-size:15px; }
+.skyline.text-right, .skyline .text-right { text-align:right; }
+.skyline.leading-none, .skyline .leading-none { line-height:1; }
+.skyline.leading-snug, .skyline .leading-snug { line-height:1.375; }
+.skyline.leading-tight, .skyline .leading-tight { line-height:1.25; }
+.skyline.tabular-nums, .skyline .tabular-nums { font-variant-numeric:tabular-nums; }
+.skyline.truncate, .skyline .truncate { overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.skyline.whitespace-nowrap, .skyline .whitespace-nowrap { white-space:nowrap; }
+.skyline.min-w-0, .skyline .min-w-0 { min-width:0; }
+.skyline.min-h-0, .skyline .min-h-0 { min-height:0; }
+.skyline.overflow-hidden, .skyline .overflow-hidden { overflow:hidden; }
+.skyline.pointer-events-none, .skyline .pointer-events-none { pointer-events:none; }
+.skyline.cursor-pointer, .skyline .cursor-pointer { cursor:pointer; }
+.skyline.z-10, .skyline .z-10 { z-index:10; }
+.skyline.z-20, .skyline .z-20 { z-index:20; }
+.skyline.top-0, .skyline .top-0 { top:0; }
+.skyline.top-0\.5, .skyline .top-0\.5 { top:2px; }
+.skyline.top-1, .skyline .top-1 { top:4px; }
+.skyline.top-3, .skyline .top-3 { top:12px; }
+.skyline.top-full, .skyline .top-full { top:100%; }
+.skyline.bottom-0\.5, .skyline .bottom-0\.5 { bottom:2px; }
+.skyline.bottom-1, .skyline .bottom-1 { bottom:4px; }
+.skyline.left-0, .skyline .left-0 { left:0; }
+.skyline.left-0\.5, .skyline .left-0\.5 { left:2px; }
+.skyline.left-1, .skyline .left-1 { left:4px; }
+.skyline.left-3, .skyline .left-3 { left:12px; }
+.skyline.right-1, .skyline .right-1 { right:4px; }
+.skyline.h-0, .skyline .h-0 { height:0; }
+.skyline.h-7, .skyline .h-7 { height:28px; }
+.skyline.h-\[11px\], .skyline .h-\[11px\] { height:11px; }
+.skyline.w-0, .skyline .w-0 { width:0; }
+.skyline.w-8, .skyline .w-8 { width:32px; }
+.skyline.w-\[11px\], .skyline .w-\[11px\] { width:11px; }
+.skyline.place-items-center, .skyline .place-items-center { place-items:center; }
+.skyline.bg-transparent, .skyline .bg-transparent { background:transparent; }
+.skyline.shadow-lg, .skyline .shadow-lg { box-shadow:0 10px 15px -3px rgba(0,0,0,.4),0 4px 6px -4px rgba(0,0,0,.3); }
+.skyline.outline-none, .skyline .outline-none { outline:none; }
+.skyline.outline-offset-4, .skyline .outline-offset-4 { outline-offset:4px; }
+.skyline.opacity-75, .skyline .opacity-75 { opacity:.75; }
+.skyline.mt-1, .skyline .mt-1 { margin-top:4px; }
+.skyline.mt-0\.5, .skyline .mt-0\.5 { margin-top:2px; }
+.skyline.mr-0\.5, .skyline .mr-0\.5 { margin-right:2px; }
+.skyline.ml-0\.5, .skyline .ml-0\.5 { margin-left:2px; }
+.skyline.px-2\.5, .skyline .px-2\.5 { padding-left:10px;padding-right:10px; }
+.skyline.px-3, .skyline .px-3 { padding-left:12px;padding-right:12px; }
+.skyline.py-1\.5, .skyline .py-1\.5 { padding-top:6px;padding-bottom:6px; }
+.skyline.pt-3, .skyline .pt-3 { padding-top:12px; }
+.skyline.pt-4, .skyline .pt-4 { padding-top:16px; }
+.skyline.pb-1, .skyline .pb-1 { padding-bottom:4px; }
+.skyline.pb-3, .skyline .pb-3 { padding-bottom:12px; }
+.skyline.pb-\[0\.15em\], .skyline .pb-\[0\.15em\] { padding-bottom:0.15em; }
+.skyline.col-span-2, .skyline .col-span-2 { grid-column:span 2 / span 2; }
+.skyline.grid-cols-2, .skyline .grid-cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.skyline.grid-cols-\[auto_auto\], .skyline .grid-cols-\[auto_auto\] { grid-template-columns:auto auto; }
+.skyline.\[grid-area\:1\/1\], .skyline .\[grid-area\:1\/1\] { grid-area:1 / 1; }
+.skyline.sr-only, .skyline .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+.skyline.transition-colors, .skyline .transition-colors { transition-property:color,background-color,border-color;transition-duration:500ms;transition-timing-function:cubic-bezier(.4,0,.2,1); }
+.skyline.transition-opacity, .skyline .transition-opacity { transition-property:opacity;transition-duration:500ms; }
+.skyline.transition-transform, .skyline .transition-transform { transition-property:transform;transition-duration:500ms; }
+.skyline.transition-\[background-color\,transform\], .skyline .transition-\[background-color\,transform\] { transition-property:background-color,transform;transition-duration:500ms; }
+.skyline.transition-\[grid-template-rows\,opacity\], .skyline .transition-\[grid-template-rows\,opacity\] { transition-property:grid-template-rows,opacity; }
+.skyline.transition-\[opacity\,transform\], .skyline .transition-\[opacity\,transform\] { transition-property:opacity,transform; }
+.skyline.duration-150, .skyline .duration-150 { transition-duration:150ms; }
+.skyline.duration-500, .skyline .duration-500 { transition-duration:500ms; }
+.skyline.hover\:scale-125, .skyline .hover\:scale-125:hover { transform: scale(1.25); }
+.skyline.focus-visible\:outline-2, .skyline .focus-visible\:outline-2:focus-visible { outline-width: 2px; outline-style: solid; }
+.skyline.focus-visible\:outline-offset-1, .skyline .focus-visible\:outline-offset-1:focus-visible { outline-offset: 1px; }
+.skyline.focus-visible\:outline-offset-2, .skyline .focus-visible\:outline-offset-2:focus-visible { outline-offset: 2px; }
+.skyline.has-\[\:focus-visible\]\:outline-2, .skyline .has-\[\:focus-visible\]\:outline-2:has(:focus-visible) { outline-width: 2px; outline-style: solid; }
+@media (prefers-reduced-motion: reduce) { .skyline.motion-reduce\:transition-none, .skyline .motion-reduce\:transition-none { transition: none !important; } }
+@media (min-width: 640px) {
+  .skyline.sm\:p-5, .skyline .sm\:p-5 { padding:20px; }
+  .skyline.sm\:px-4, .skyline .sm\:px-4 { padding-left:16px;padding-right:16px; }
+  .skyline.sm\:pt-4, .skyline .sm\:pt-4 { padding-top:16px; }
+  .skyline.sm\:top-4, .skyline .sm\:top-4 { top:16px; }
+  .skyline.sm\:left-4, .skyline .sm\:left-4 { left:16px; }
+}
+@media (min-width: 768px) {
+  .skyline.md\:grid-cols-4, .skyline .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.skyline canvas { cursor: auto; }
+@media (max-width: 900px) { .skyline canvas { cursor: auto; } .skyline .cursor-pointer, .skyline.cursor-pointer { cursor: pointer; } }

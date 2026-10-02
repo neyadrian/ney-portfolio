@@ -7,4 +7,7 @@ export default defineConfig({
   // Precisa bater com o nome do repositório, porque o GitHub Pages
   // publica projetos em https://<usuario>.github.io/<repositorio>/
   base: '/ney-portfolio/',
+  server: {
+    allowedHosts: ['.monkeycode-ai.live']
+  }
 })
