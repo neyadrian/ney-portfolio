@@ -5,50 +5,42 @@ import FlowButton from "./FlowButton";
 const projectMeta = [
   {
     key: "commitcard",
-    icon: "ri-id-card-line",
     tags: ["Java", "Spring Boot", "GitHub OAuth"],
     link: "https://commitcard.com.br",
     featured: true,
   },
   {
     key: "banco",
-    icon: "ri-bank-line",
     tags: ["Java", "Swing", "MySQL", "MVC"],
     link: "https://github.com/neyadrian/projeto-banc-rio",
   },
   {
     key: "gps",
-    icon: "ri-map-2-line",
     tags: ["C", "Graphs", "Dijkstra"],
     link: "https://github.com/neyadrian/sistema-gps",
   },
   {
     key: "cinema",
-    icon: "ri-film-line",
     tags: ["Java", "OOP", "Arrays"],
     link: "https://github.com/neyadrian/sistema-cinema",
   },
   {
     key: "rh",
-    icon: "ri-group-line",
     tags: ["Java", "OOP", "Collections"],
     link: "https://github.com/neyadrian/gestao-rh",
   },
   {
     key: "logitrack",
-    icon: "ri-truck-line",
     tags: ["Java", "Design Patterns", "SOLID"],
     link: "https://github.com/neyadrian/Logi-Track",
   },
   {
     key: "supermercado",
-    icon: "ri-shopping-cart-2-line",
     tags: ["Java", "Sockets", "TCP/UDP"],
     link: "https://github.com/neyadrian/sistema-supermercado",
   },
   {
     key: "geladao",
-    icon: "ri-box-3-line",
     tags: ["Java", "Spring Boot", "Estoque"],
     link: "https://github.com/neyadrian/geladao-bebidas",
     featured: true,
@@ -92,16 +84,18 @@ export default function Projects() {
           className={`project-card project-card-featured fade-up stagger-${Math.min(i + 2, 5)}`}
         >
           <div className="project-header">
-            <div className="project-icon"><i className={featured.icon}></i></div>
-            <div className="project-tags">
-              <span className="featured-badge">{t.projects.featured}</span>
-              {featured.tags.map((tag) => (
-                <span key={tag} className="tag">{tag}</span>
-              ))}
-            </div>
+            <span className="featured-badge">{t.projects.featured}</span>
           </div>
           <h3 className="project-title">{t.projects.items[featured.key].title}</h3>
           <p className="project-desc">{t.projects.items[featured.key].desc}</p>
+          
+          {/* Tags movidas para cá */}
+          <div className="project-tags">
+            {featured.tags.map((tag) => (
+              <span key={tag} className="tag">{tag}</span>
+            ))}
+          </div>
+          
           <FlowButton
             text={t.projects.visitSite}
             href={featured.link}
@@ -117,16 +111,16 @@ export default function Projects() {
             key={p.key}
             className={`project-card fade-up stagger-${Math.min(i + 3, 5)}`}
           >
-            <div className="project-header">
-              <div className="project-icon"><i className={p.icon}></i></div>
-              <div className="project-tags">
-                {p.tags.map((tag) => (
-                  <span key={tag} className="tag">{tag}</span>
-                ))}
-              </div>
-            </div>
             <h3 className="project-title">{t.projects.items[p.key].title}</h3>
             <p className="project-desc">{t.projects.items[p.key].desc}</p>
+            
+            {/* Tags movidas para cá */}
+            <div className="project-tags">
+              {p.tags.map((tag) => (
+                <span key={tag} className="tag">{tag}</span>
+              ))}
+            </div>
+            
             <FlowButton
               text={t.projects.viewGithub}
               href={p.link}
