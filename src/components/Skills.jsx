@@ -1,52 +1,73 @@
-import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { motion } from "framer-motion";
+import Card3D from "./Card3D";
 
 const skills = [
-  { icon: "devicon-java-plain colored", label: "Java" },
-  { icon: "devicon-spring-original colored", label: "Spring Boot" },
-  { icon: "devicon-mysql-plain colored", label: "MySQL" },
-  { icon: "devicon-postgresql-plain colored", label: "PostgreSQL" },
-  { icon: "devicon-docker-plain colored", label: "Docker" },
+  { key: "java", icon: "devicon-java-plain colored", theme: "warning" },
+  { key: "spring", icon: "devicon-spring-original colored", theme: "success" },
+  { key: "mysql", icon: "devicon-mysql-plain colored", theme: "info" },
+  { key: "postgres", icon: "devicon-postgresql-plain colored", theme: "secondary" },
+  { key: "docker", icon: "devicon-docker-plain colored", theme: "info" },
 ];
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 40, rotateX: -15, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 100, damping: 12, mass: 0.7 },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.12,
+      duration: 0.5,
+      ease: [0.23, 1, 0.32, 1],
+    },
+  },
+};
+
 export default function Skills() {
-  const sectionRef = useRef(null);
   const { t } = useLanguage();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll(".fade-up").forEach((el, i) => {
-              setTimeout(() => el.classList.add("visible"), i * 80);
-            });
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="skills-section" id="skills" ref={sectionRef}>
-      <p className="section-label fade-up">{t.skills.label}</p>
-      <h2 className="section-title fade-up stagger-1">
+    <section className="skills-section" id="skills">
+      <p className="section-label">{t.skills.label}</p>
+      <h2 className="section-title">
         {t.skills.title} <span className="dim">{t.skills.titleDim}</span>
       </h2>
-      <div className="skills-grid">
-        {skills.map((s, i) => (
-          <div
-            key={s.label}
-            className={`skill-card fade-up stagger-${Math.min(i + 1, 5)}`}
+      <motion.div
+        className="skills-3d-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {skills.map((s) => (
+          <motion.div
+            key={s.key}
+            className="skills-3d-item"
+            variants={itemVariants}
           >
-            <i className={s.icon} />
-            <span>{s.label}</span>
-          </div>
+            <Card3D
+              title={t.skills.items[s.key].title}
+              description={t.skills.items[s.key].desc}
+              icon={<i className={s.icon} />}
+              theme={s.theme}
+              size="md"
+              variant="premium"
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
