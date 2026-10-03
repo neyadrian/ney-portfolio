@@ -1,0 +1,202 @@
+/* ============================================
+   3D SKILL CARDS
+   ============================================ */
+.card3d {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  transform: translateZ(0);
+  transition: box-shadow 0.5s ease;
+}
+
+.card3d-md {
+  height: 320px;
+}
+
+.card3d-premium {
+  box-shadow: 0 20px 40px var(--shadow);
+  box-shadow:
+    0 20px 40px var(--shadow),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.card3d-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+}
+
+.card3d-pattern {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.card3d-pattern-svg {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 128px;
+  height: 128px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.card3d-ornament {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  width: 96px;
+  height: 96px;
+  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.card3d-ornament svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card3d-shade {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+.card3d-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.card3d-shine-inner {
+  position: absolute;
+  inset: -100%;
+}
+
+.card3d-body {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  color: #fff;
+}
+
+.card3d-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card3d-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+}
+
+.card3d-icon i {
+  display: block;
+}
+
+.card3d-dot-wrap {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+.card3d-dot,
+.card3d-dot-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.card3d-dot-pulse {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.card3d-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card3d-copy h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.card3d-copy p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card3d-gloss {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 30%, transparent 70%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+.card3d-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  pointer-events: none;
+  filter: blur(15px);
+  transform: translateZ(-5px);
+  z-index: -1;
+}
+
+.skills-3d-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+.skills-3d-item {
+  transform-style: preserve-3d;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .skills-3d-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-3d-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card3d-md {
+    height: 280px;
+  }
+}
