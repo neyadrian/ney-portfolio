@@ -68,7 +68,7 @@ export default function Footer() {
           <div className="footer-divider" />
 
           <p className="footer-copy">
-            &copy; {year} {t.footer.buildBy}, {t.footer.tagline}
+            &copy; {year} Ney Adrian. {t.footer.tagline}
           </p>
         </div>
       </div>
