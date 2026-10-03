@@ -97,7 +97,7 @@ const translations = {
     },
     footer: {
       builtBy: "Built by Ney Adrian",
-      tagline: "Made for builders who care about details.",
+      tagline: "with dedication and focus on results.",
     },
     themeToggle: {
       toLight: "Switch to light mode",
@@ -204,7 +204,7 @@ const translations = {
     },
     footer: {
       builtBy: "Desenvolvido por Ney Adrian",
-      tagline: "Feito para quem se importa com os detalhes.",
+      tagline: "com dedicação e foco em resultados.",
     },
     themeToggle: {
       toLight: "Mudar para modo claro",
