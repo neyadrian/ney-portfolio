@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import Card3D from "./Card3D";
 
 const skills = [
-  { key: "java", icon: "devicon-java-plain colored", theme: "warning" },
-  { key: "spring", icon: "devicon-spring-original colored", theme: "success" },
-  { key: "mysql", icon: "devicon-mysql-plain colored", theme: "info" },
-  { key: "postgres", icon: "devicon-postgresql-plain colored", theme: "secondary" },
-  { key: "docker", icon: "devicon-docker-plain colored", theme: "info" },
+  { key: "java", icon: "devicon-java-plain", theme: "warning" },
+  { key: "spring", icon: "devicon-spring-original", theme: "success" },
+  { key: "mysql", icon: "devicon-mysql-plain", theme: "info" },
+  { key: "postgres", icon: "devicon-postgresql-plain", theme: "secondary" },
+  { key: "docker", icon: "devicon-docker-plain", theme: "info" },
 ];
 
 const itemVariants = {
