@@ -175,31 +175,6 @@
   50% { transform: translateY(-8px); }
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 0.65rem;
-  font-family: var(--font-mono);
-  letter-spacing: 2px;
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-.scroll-line {
-  width: 1px; height: 36px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-}
-
-@keyframes scrollBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
-
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; text-align: center; padding-top: 130px; }
   .hero-text { order: 2; }

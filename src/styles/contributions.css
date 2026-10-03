@@ -1,0 +1,40 @@
+/* ============================================
+   CONTRIBUTIONS
+   ============================================ */
+.contributions-section {
+  background: var(--bg);
+  position: relative;
+}
+
+.contributions-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.4;
+}
+
+.contributions-chart {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.contributions-github-link {
+  color: var(--muted);
+  font-size: 12px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.contributions-github-link:hover {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .contributions-github-link {
+    cursor: pointer;
+  }
+}

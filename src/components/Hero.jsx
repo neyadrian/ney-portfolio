@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import FlowButton from "./FlowButton";
 
 export default function Hero() {
   const textRef = useRef(null);
@@ -36,9 +37,6 @@ export default function Hero() {
         <p className="hero-desc">{t.hero.desc}</p>
 
         <div className="btn-group">
-          <a href="#projects" className="btn btn-primary">
-            {t.hero.ctaProjects} <i className="ri-arrow-right-line"></i>
-          </a>
           <a
             href="https://www.linkedin.com/in/ney-adrian-casimiro-oliveira-567b902bb/"
             target="_blank"
@@ -48,6 +46,12 @@ export default function Hero() {
             <i className="ri-linkedin-fill"></i>
             {t.hero.ctaLinkedin}
           </a>
+          <FlowButton
+            text={t.hero.ctaWhatsapp}
+            href="https://wa.me/5588993318560"
+            target="_blank"
+            rel="noreferrer"
+          />
         </div>
       </div>
 
@@ -77,11 +81,6 @@ export default function Hero() {
           <p className="terminal-output">{t.hero.terminalOutput1}</p>
           <p className="terminal-output">{t.hero.terminalOutput2}</p>
         </div>
-      </div>
-
-      <div className="scroll-indicator">
-        <div className="scroll-line" />
-        {t.hero.scroll}
       </div>
     </section>
   );

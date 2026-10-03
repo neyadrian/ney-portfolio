@@ -4,15 +4,9 @@ import { useLanguage } from "../context/LanguageContext";
 const skills = [
   { icon: "devicon-java-plain colored", label: "Java" },
   { icon: "devicon-spring-original colored", label: "Spring Boot" },
-  { icon: "devicon-c-plain colored", label: "C" },
   { icon: "devicon-mysql-plain colored", label: "MySQL" },
   { icon: "devicon-postgresql-plain colored", label: "PostgreSQL" },
-  { icon: "devicon-hibernate-plain colored", label: "Hibernate / JPA" },
-  { icon: "devicon-maven-plain colored", label: "Maven" },
   { icon: "devicon-docker-plain colored", label: "Docker" },
-  { icon: "devicon-git-plain colored", label: "Git" },
-  { icon: "devicon-github-original colored", label: "GitHub" },
-  { icon: "devicon-postman-plain colored", label: "Postman" },
 ];
 
 export default function Skills() {
