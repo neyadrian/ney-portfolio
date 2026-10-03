@@ -23,6 +23,28 @@ const translations = {
       label: "Technologies",
       title: "What I",
       titleDim: "work with",
+      items: {
+        java: {
+          title: "Java",
+          desc: "Object-oriented language I use to build solid, scalable back-end systems.",
+        },
+        spring: {
+          title: "Spring Boot",
+          desc: "Framework I use to ship REST APIs, security and production-ready services.",
+        },
+        mysql: {
+          title: "MySQL",
+          desc: "Relational database I use for structured data and transactional workloads.",
+        },
+        postgres: {
+          title: "PostgreSQL",
+          desc: "Advanced SQL database I use when I need reliability and richer queries.",
+        },
+        docker: {
+          title: "Docker",
+          desc: "I containerize apps so they run the same way locally and in production.",
+        },
+      },
     },
     contributions: {
       label: "GitHub",
@@ -108,6 +130,28 @@ const translations = {
       label: "Tecnologias",
       title: "O que eu",
       titleDim: "uso",
+      items: {
+        java: {
+          title: "Java",
+          desc: "Linguagem orientada a objetos que uso para construir sistemas back-end solidos e escalaveis.",
+        },
+        spring: {
+          title: "Spring Boot",
+          desc: "Framework que uso para entregar APIs REST, seguranca e servicos prontos para producao.",
+        },
+        mysql: {
+          title: "MySQL",
+          desc: "Banco relacional que uso para dados estruturados e cargas transacionais.",
+        },
+        postgres: {
+          title: "PostgreSQL",
+          desc: "Banco SQL avancado que uso quando preciso de confiabilidade e consultas mais ricas.",
+        },
+        docker: {
+          title: "Docker",
+          desc: "Empacoto aplicacoes em containers para rodarem igual no local e em producao.",
+        },
+      },
     },
     contributions: {
       label: "GitHub",
