@@ -4,14 +4,62 @@ import ContributionSkyline from "./ContributionSkyline";
 import fallback from "../data/github-contributions.json";
 
 const GITHUB_USER = "neyadrian";
-const LIVE_URL = `https://github-contributions.vercel.app/api/v1/${GITHUB_USER}`;
 
 function toDays(list) {
-  if (!Array.isArray(list)) return fallback;
-  return list.map((d) => ({
-    date: d.date,
-    count: Number(d.count) || 0,
-  }));
+  if (!Array.isArray(list)) return [];
+  return list
+    .map((d) => ({
+      date: String(d.date || ""),
+      count: Number(d.count) || 0,
+    }))
+    .filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d.date));
+}
+
+function isPlausible(days) {
+  if (!days.length) return false;
+  const total = days.reduce((sum, day) => sum + day.count, 0);
+  const nonzero = days.filter((day) => day.count > 0).length;
+  const max = days.reduce((best, day) => Math.max(best, day.count), 0);
+  return total >= 10 && nonzero >= 10 && max <= total * 0.35;
+}
+
+function parseGitHubCalendar(html) {
+  const days = [];
+  const cellRe = /id="(contribution-day-component-\d+-\d+)"[^>]*data-date="(\d{4}-\d{2}-\d{2})"|data-date="(\d{4}-\d{2}-\d{2})"[^>]*id="(contribution-day-component-\d+-\d+)"/g;
+  const ids = {};
+  let match;
+  while ((match = cellRe.exec(html))) {
+    const id = match[1] || match[4];
+    const date = match[2] || match[3];
+    if (id && date) ids[id] = date;
+  }
+
+  const tipRe = /<tool-tip[^>]*for="([^"]+)"[^>]*>([^<]+)<\/tool-tip>/g;
+  while ((match = tipRe.exec(html))) {
+    const date = ids[match[1]];
+    if (!date) continue;
+    const text = match[2].trim();
+    const countMatch = /^(\d+)/.exec(text);
+    days.push({
+      date,
+      count: countMatch ? Number(countMatch[1]) : 0,
+    });
+  }
+  return days;
+}
+
+async function loadContributions() {
+  try {
+    const res = await fetch("/api/github-contributions");
+    if (res.ok) {
+      const html = await res.text();
+      const days = parseGitHubCalendar(html);
+      if (isPlausible(days)) return days;
+    }
+  } catch {
+    /* fall through to snapshot */
+  }
+  return toDays(fallback);
 }
 
 export default function Contributions() {
@@ -21,13 +69,9 @@ export default function Contributions() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch(LIVE_URL)
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((json) => {
-        if (cancelled || !json?.contributions) return;
-        setData(toDays(json.contributions));
-      })
-      .catch(() => {});
+    loadContributions().then((days) => {
+      if (!cancelled && isPlausible(days)) setData(days);
+    });
     return () => {
       cancelled = true;
     };
@@ -61,7 +105,7 @@ export default function Contributions() {
       <div className="contributions-chart fade-up stagger-2">
         <ContributionSkyline
           data={data}
-          endDate={new Date()}
+          endDate={data.reduce((latest, day) => (day.date > latest ? day.date : latest), data[0]?.date) || new Date()}
           locale={locale}
           unit={t.contributions.unit}
           unitPlural={t.contributions.unitPlural}

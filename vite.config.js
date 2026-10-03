@@ -8,6 +8,13 @@ export default defineConfig({
   // publica projetos em https://<usuario>.github.io/<repositorio>/
   base: '/ney-portfolio/',
   server: {
-    allowedHosts: ['.monkeycode-ai.live']
+    allowedHosts: ['.monkeycode-ai.live'],
+    proxy: {
+      '/api/github-contributions': {
+        target: 'https://github.com',
+        changeOrigin: true,
+        rewrite: () => '/users/neyadrian/contributions',
+      },
+    },
   }
 })
