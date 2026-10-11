@@ -25,7 +25,6 @@ export default function Footer() {
   const navLinks = [
     { label: t.nav.about, href: "#about" },
     { label: t.nav.skills, href: "#skills" },
-    { label: t.nav.certs, href: "#certifications" },
     { label: t.nav.projects, href: "#projects" },
     { label: t.nav.contact, href: "#contact" },
   ];
