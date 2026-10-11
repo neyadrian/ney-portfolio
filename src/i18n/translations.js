@@ -3,7 +3,6 @@ const translations = {
     nav: {
       about: "About",
       skills: "Skills",
-      certs: "Certifications",
       projects: "Projects",
       contact: "Contact",
     },
@@ -49,22 +48,6 @@ const translations = {
       titleDim: "commits",
       unit: "contribution",
       unitPlural: "contributions",
-    },
-    certs: {
-      label: "Credentials",
-      title: "Verified",
-      titleDim: "certifications",
-      verify: "Verify credential",
-      items: {
-        aws: {
-          title: "AWS Academy Cloud Foundations",
-          issuer: "Amazon Web Services",
-        },
-        google: {
-          title: "Google IT Support",
-          issuer: "Google",
-        },
-      },
     },
     projects: {
       label: "Portfolio",
@@ -123,7 +106,6 @@ const translations = {
     nav: {
       about: "Sobre",
       skills: "Skills",
-      certs: "Certificações",
       projects: "Projetos",
       contact: "Contato",
     },
@@ -169,22 +151,6 @@ const translations = {
       titleDim: "commits",
       unit: "contribuição",
       unitPlural: "contribuições",
-    },
-    certs: {
-      label: "Credenciais",
-      title: "Certificações",
-      titleDim: "verificadas",
-      verify: "Verificar credencial",
-      items: {
-        aws: {
-          title: "AWS Academy Cloud Foundations",
-          issuer: "Amazon Web Services",
-        },
-        google: {
-          title: "Google IT Support",
-          issuer: "Google",
-        },
-      },
     },
     projects: {
       label: "Portfólio",

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import FlowButton from "./FlowButton";
+import foto from "../assets/foto.jpeg";
 
 export default function Hero() {
   const textRef = useRef(null);
@@ -59,7 +60,7 @@ export default function Hero() {
         <div className="img-frame">
           <div className="img-glow" />
           <div className="img-border">
-            <img src="/ney-portfolio/foto.jpeg" alt="Ney Adrian" />
+            <img src={foto} alt="Ney Adrian" />
           </div>
           <div className="img-corner tl" />
           <div className="img-corner tr" />
