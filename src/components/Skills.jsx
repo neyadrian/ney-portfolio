@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import Card3D from "./Card3D";
 
 const skills = [
-  { key: "java", icon: "devicon-java-plain", theme: "warning" },
-  { key: "spring", icon: "devicon-spring-original", theme: "success" },
-  { key: "mysql", icon: "devicon-mysql-plain", theme: "info" },
-  { key: "postgres", icon: "devicon-postgresql-plain", theme: "secondary" },
-  { key: "docker", icon: "devicon-docker-plain", theme: "info" },
+  { key: "java", icon: "devicon-java-plain" },
+  { key: "spring", icon: "devicon-spring-original" },
+  { key: "mysql", icon: "devicon-mysql-plain" },
+  { key: "postgres", icon: "devicon-postgresql-plain" },
+  { key: "docker", icon: "devicon-docker-plain" },
 ];
 
 const itemVariants = {
@@ -61,7 +61,7 @@ export default function Skills() {
               title={t.skills.items[s.key].title}
               description={t.skills.items[s.key].desc}
               icon={<i className={s.icon} />}
-              theme={s.theme}
+              theme="silver"
               size="md"
               variant="premium"
             />

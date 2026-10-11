@@ -8,6 +8,7 @@ import "./styles/hero.css";
 import "./styles/contributions.css";
 import "./styles/skyline.css";
 import "./styles/skills.css";
+import "./styles/certs.css";
 import "./styles/card3d.css";
 import "./styles/projects.css";
 import "./styles/footer.css";

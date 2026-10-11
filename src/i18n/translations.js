@@ -3,6 +3,7 @@ const translations = {
     nav: {
       about: "About",
       skills: "Skills",
+      certs: "Certifications",
       projects: "Projects",
       contact: "Contact",
     },
@@ -14,10 +15,6 @@ const translations = {
       ctaLinkedin: "LinkedIn",
       ctaWhatsapp: "WhatsApp",
       scroll: "SCROLL",
-      terminalLabel: "latest commits",
-      terminalCmd: "git log --oneline -2",
-      terminalOutput1: "feat: ship CommitCard to production 🚀",
-      terminalOutput2: "feat: implement inventory for Geladão Bebidas 📦",
     },
     skills: {
       label: "Technologies",
@@ -52,6 +49,22 @@ const translations = {
       titleDim: "commits",
       unit: "contribution",
       unitPlural: "contributions",
+    },
+    certs: {
+      label: "Credentials",
+      title: "Verified",
+      titleDim: "certifications",
+      verify: "Verify credential",
+      items: {
+        aws: {
+          title: "AWS Academy Cloud Foundations",
+          issuer: "Amazon Web Services",
+        },
+        google: {
+          title: "Google IT Support",
+          issuer: "Google",
+        },
+      },
     },
     projects: {
       label: "Portfolio",
@@ -110,6 +123,7 @@ const translations = {
     nav: {
       about: "Sobre",
       skills: "Skills",
+      certs: "Certificações",
       projects: "Projetos",
       contact: "Contato",
     },
@@ -121,10 +135,6 @@ const translations = {
       ctaLinkedin: "LinkedIn",
       ctaWhatsapp: "WhatsApp",
       scroll: "ROLAR",
-      terminalLabel: "últimos commits",
-      terminalCmd: "git log --oneline -2",
-      terminalOutput1: "feat: publica o CommitCard em produção 🚀",
-      terminalOutput2: "feat: implementa estoque do Geladão Bebidas 📦",
     },
     skills: {
       label: "Tecnologias",
@@ -159,6 +169,22 @@ const translations = {
       titleDim: "commits",
       unit: "contribuição",
       unitPlural: "contribuições",
+    },
+    certs: {
+      label: "Credenciais",
+      title: "Certificações",
+      titleDim: "verificadas",
+      verify: "Verificar credencial",
+      items: {
+        aws: {
+          title: "AWS Academy Cloud Foundations",
+          issuer: "Amazon Web Services",
+        },
+        google: {
+          title: "Google IT Support",
+          issuer: "Google",
+        },
+      },
     },
     projects: {
       label: "Portfólio",
