@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
+import LogoTypewriter from "./LogoTypewriter";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,12 +16,13 @@ export default function Header() {
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <div className="logo">&lt;Ney<span>Adrian</span>/&gt;</div>
+      <LogoTypewriter />
 
       <nav>
         <ul>
           <li><a href="#about">{t.nav.about}</a></li>
           <li><a href="#skills">{t.nav.skills}</a></li>
+          <li><a href="#certifications">{t.nav.certs}</a></li>
           <li><a href="#projects">{t.nav.projects}</a></li>
           <li><a href="#contact">{t.nav.contact}</a></li>
         </ul>

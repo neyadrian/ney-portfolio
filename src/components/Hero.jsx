@@ -66,21 +66,6 @@ export default function Hero() {
           <div className="img-corner bl" />
           <div className="img-corner br" />
         </div>
-
-        <div className="terminal-card">
-          <div className="terminal-dots">
-            <span />
-            <span />
-            <span />
-          </div>
-          <p className="terminal-label">{t.hero.terminalLabel}</p>
-          <p className="terminal-line">
-            <span className="prompt">$</span>
-            {t.hero.terminalCmd}
-          </p>
-          <p className="terminal-output">{t.hero.terminalOutput1}</p>
-          <p className="terminal-output">{t.hero.terminalOutput2}</p>
-        </div>
       </div>
     </section>
   );

@@ -2,14 +2,15 @@ import React, { useState, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const THEMES = {
-  primary: "linear-gradient(to bottom right, #334155, #1e293b, #0f172a)",
-  secondary: "linear-gradient(to bottom right, #2563eb, #1d4ed8, #1e40af)",
-  accent: "linear-gradient(to bottom right, #9333ea, #7e22ce, #6b21a8)",
-  success: "linear-gradient(to bottom right, #059669, #047857, #065f46)",
-  warning: "linear-gradient(to bottom right, #d97706, #b45309, #92400e)",
-  danger: "linear-gradient(to bottom right, #dc2626, #b91c1c, #991b1b)",
-  info: "linear-gradient(to bottom right, #0891b2, #0e7490, #155e75)",
-  neutral: "linear-gradient(to bottom right, #4b5563, #374151, #1f2937)",
+  primary: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  secondary: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  accent: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  success: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  warning: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  danger: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  info: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  neutral: "linear-gradient(to bottom right, #9aa0aa, #6f7580, #3f444c)",
+  silver: "linear-gradient(to bottom right, #c5c9d1, #8b919c, #4a4f58)",
 };
 
 const Card3D = React.forwardRef(function Card3D(
