@@ -8,6 +8,31 @@ const skills = [
   { key: "mysql", icon: "devicon-mysql-plain" },
   { key: "postgres", icon: "devicon-postgresql-plain" },
   { key: "docker", icon: "devicon-docker-plain" },
+  {
+    key: "nodejs",
+    icon: (
+      <svg className="node-js-mark" viewBox="0 0 256 256" aria-hidden="true">
+        <path
+          d="M128 20 232 80v96L128 236 24 176V80Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="18"
+          strokeLinejoin="round"
+        />
+        <text
+          x="128"
+          y="158"
+          textAnchor="middle"
+          fill="#fff"
+          fontFamily="Arial, sans-serif"
+          fontWeight="800"
+          fontSize="92"
+        >
+          JS
+        </text>
+      </svg>
+    ),
+  },
 ];
 
 const itemVariants = {
@@ -60,7 +85,7 @@ export default function Skills() {
             <Card3D
               title={t.skills.items[s.key].title}
               description={t.skills.items[s.key].desc}
-              icon={<i className={s.icon} />}
+              icon={typeof s.icon === "string" ? <i className={s.icon} /> : s.icon}
               theme="silver"
               size="md"
               variant="premium"

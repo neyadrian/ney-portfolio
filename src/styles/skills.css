@@ -15,3 +15,10 @@
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
   opacity: 0.4;
 }
+
+.card3d-icon .node-js-mark {
+  width: 1.15em;
+  height: 1.15em;
+  display: block;
+  color: #fff;
+}

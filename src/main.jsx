@@ -5,6 +5,7 @@ import "./styles/theme.css";
 import "./styles/base.css";
 import "./styles/header.css";
 import "./styles/hero.css";
+import "./styles/about.css";
 import "./styles/contributions.css";
 import "./styles/skyline.css";
 import "./styles/skills.css";

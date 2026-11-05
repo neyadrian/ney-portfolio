@@ -1,6 +1,7 @@
 const translations = {
   en: {
     nav: {
+      home: "Home",
       about: "About",
       skills: "Skills",
       projects: "Projects",
@@ -14,6 +15,30 @@ const translations = {
       ctaLinkedin: "LinkedIn",
       ctaWhatsapp: "WhatsApp",
       scroll: "SCROLL",
+    },
+    about: {
+      label: "About me",
+      title: "Who I am",
+      titleDim: "beyond the stack",
+      name: "Ney Adrian",
+      role: "Back-End Developer · Software Engineering",
+      slides: [
+        {
+          kicker: "Back-End Developer · IFCE",
+          title: "Ney Adrian",
+          body: "I am a Software Engineering student at IFCE and a back-end developer. I like turning messy problems into clear APIs and architectures that other people can actually maintain.",
+        },
+        {
+          kicker: "How I work",
+          title: "Curious, practical, shipping",
+          body: "I learn by building: banking sims, GPS graphs, HR systems, and products that went live like Commit Card. I care about clean structure, SQL done right, and code that still makes sense months later.",
+        },
+        {
+          kicker: "What I am exploring",
+          title: "Better workflows",
+          body: "I am drawn to new tools — including language-model automations — when they save time and raise quality. If you want to talk back-end, products or that mix, let's connect.",
+        },
+      ],
     },
     skills: {
       label: "Technologies",
@@ -39,6 +64,10 @@ const translations = {
         docker: {
           title: "Docker",
           desc: "I containerize apps so they run the same way locally and in production.",
+        },
+        nodejs: {
+          title: "Node.js",
+          desc: "I use Node.js for APIs, tooling and JavaScript services around the Java stack.",
         },
       },
     },
@@ -104,6 +133,7 @@ const translations = {
 
   pt: {
     nav: {
+      home: "Início",
       about: "Sobre",
       skills: "Skills",
       projects: "Projetos",
@@ -117,6 +147,30 @@ const translations = {
       ctaLinkedin: "LinkedIn",
       ctaWhatsapp: "WhatsApp",
       scroll: "ROLAR",
+    },
+    about: {
+      label: "Sobre mim",
+      title: "Quem eu sou",
+      titleDim: "fora do stack",
+      name: "Ney Adrian",
+      role: "Desenvolvedor Back-End · Engenharia de Software",
+      slides: [
+        {
+          kicker: "Desenvolvedor Back-End · IFCE",
+          title: "Ney Adrian",
+          body: "Sou estudante de Engenharia de Software no IFCE e desenvolvedor back-end. Gosto de transformar problemas bagunçados em APIs claras e arquiteturas que dá para manter de verdade.",
+        },
+        {
+          kicker: "Como eu trabalho",
+          title: "Curioso, prático, entregando",
+          body: "Aprendo construindo: simuladores bancários, GPS com grafos, sistemas de RH e produtos no ar como o Commit Card. Ligo para estrutura limpa, SQL bem feito e código que ainda faz sentido daqui a meses.",
+        },
+        {
+          kicker: "O que estou explorando",
+          title: "Fluxos melhores",
+          body: "Me interesso por ferramentas novas — inclusive automações com modelos de linguagem — quando elas poupam tempo e sobem a qualidade. Se quiser falar de back-end, produto ou essa mistura, vamos nos conectar.",
+        },
+      ],
     },
     skills: {
       label: "Tecnologias",
@@ -142,6 +196,10 @@ const translations = {
         docker: {
           title: "Docker",
           desc: "Empacoto aplicacoes em containers para rodarem igual no local e em producao.",
+        },
+        nodejs: {
+          title: "Node.js",
+          desc: "Uso Node.js para APIs, ferramentas e serviços em JavaScript ao redor do stack Java.",
         },
       },
     },

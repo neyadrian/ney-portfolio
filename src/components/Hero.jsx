@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import FlowButton from "./FlowButton";
-import foto from "../assets/foto.jpeg";
+import HalftoneFlowHero from "./HalftoneFlowHero";
 
 export default function Hero() {
   const textRef = useRef(null);
@@ -21,51 +21,40 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="about">
-      <div className="hero-bg-grid" />
+    <section className="hero" id="home">
+      <HalftoneFlowHero />
 
-      <div className="hero-text" ref={textRef}>
-        <div className="role-badge">
-          <span className="badge-dot" />
-          {t.hero.badge}
-        </div>
-
-        <h1>
-          {t.hero.titleLine}{" "}
-          <span className="highlight">{t.hero.titleHighlight}</span>
-        </h1>
-
-        <p className="hero-desc">{t.hero.desc}</p>
-
-        <div className="btn-group">
-          <a
-            href="https://www.linkedin.com/in/ney-adrian-casimiro-oliveira-567b902bb/"
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-ghost"
-          >
-            <i className="ri-linkedin-fill"></i>
-            {t.hero.ctaLinkedin}
-          </a>
-          <FlowButton
-            text={t.hero.ctaWhatsapp}
-            href="https://wa.me/5588993318560"
-            target="_blank"
-            rel="noreferrer"
-          />
-        </div>
-      </div>
-
-      <div className="hero-visual">
-        <div className="img-frame">
-          <div className="img-glow" />
-          <div className="img-border">
-            <img src={foto} alt="Ney Adrian" />
+      <div className="hero-inner">
+        <div className="hero-text" ref={textRef}>
+          <div className="role-badge">
+            <span className="badge-dot" />
+            {t.hero.badge}
           </div>
-          <div className="img-corner tl" />
-          <div className="img-corner tr" />
-          <div className="img-corner bl" />
-          <div className="img-corner br" />
+
+          <h1>
+            {t.hero.titleLine}{" "}
+            <span className="highlight">{t.hero.titleHighlight}</span>
+          </h1>
+
+          <p className="hero-desc">{t.hero.desc}</p>
+
+          <div className="btn-group">
+            <a
+              href="https://www.linkedin.com/in/ney-adrian-casimiro-oliveira-567b902bb/"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-ghost"
+            >
+              <i className="ri-linkedin-fill"></i>
+              {t.hero.ctaLinkedin}
+            </a>
+            <FlowButton
+              text={t.hero.ctaWhatsapp}
+              href="https://wa.me/5588993318560"
+              target="_blank"
+              rel="noreferrer"
+            />
+          </div>
         </div>
       </div>
     </section>
