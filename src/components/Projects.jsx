@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import FlowButton from "./FlowButton";
+import GlassFold from "./GlassFold";
 
 const projectMeta = [
   {
@@ -73,6 +74,16 @@ export default function Projects() {
 
   return (
     <section className="projects-section" id="projects" ref={sectionRef}>
+      <div className="projects-fold" aria-hidden="true">
+        <GlassFold
+          color1="#8b919c"
+          color2="#08090c"
+          color3="#e8e9ef"
+          speed={0.45}
+          scale={1}
+          noise={0.1}
+        />
+      </div>
       <p className="section-label fade-up">{t.projects.label}</p>
       <h2 className="section-title fade-up stagger-1">
         {t.projects.title} <span className="dim">{t.projects.titleDim}</span>

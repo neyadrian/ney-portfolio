@@ -123,6 +123,15 @@ const translations = {
     footer: {
       builtBy: "Built by Ney Adrian",
       tagline: "Developed with dedication and focus on results.",
+      ready: "Ready to begin?",
+      marquee: [
+        "Back-End Developer",
+        "Java & Spring Boot",
+        "Software Engineering",
+        "REST APIs",
+        "Clean architecture",
+        "Docker & SQL",
+      ],
     },
     themeToggle: {
       toLight: "Switch to light mode",
@@ -255,6 +264,15 @@ const translations = {
     footer: {
       builtBy: "Desenvolvido por Ney Adrian",
       tagline: "Desenvolvido com dedicação e foco em resultados.",
+      ready: "Pronto para começar?",
+      marquee: [
+        "Desenvolvedor Back-End",
+        "Java & Spring Boot",
+        "Engenharia de Software",
+        "APIs REST",
+        "Arquitetura limpa",
+        "Docker & SQL",
+      ],
     },
     themeToggle: {
       toLight: "Mudar para modo claro",

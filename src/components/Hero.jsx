@@ -39,15 +39,12 @@ export default function Hero() {
           <p className="hero-desc">{t.hero.desc}</p>
 
           <div className="btn-group">
-            <a
+            <FlowButton
+              text={t.hero.ctaLinkedin}
               href="https://www.linkedin.com/in/ney-adrian-casimiro-oliveira-567b902bb/"
               target="_blank"
               rel="noreferrer"
-              className="btn btn-ghost"
-            >
-              <i className="ri-linkedin-fill"></i>
-              {t.hero.ctaLinkedin}
-            </a>
+            />
             <FlowButton
               text={t.hero.ctaWhatsapp}
               href="https://wa.me/5588993318560"

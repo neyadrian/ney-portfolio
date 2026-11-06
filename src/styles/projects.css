@@ -1,7 +1,37 @@
 /* ============================================
    PROJECTS
    ============================================ */
-.projects-section { position: relative; }
+.projects-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.projects-fold {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects-section > :not(.projects-fold) {
+  position: relative;
+  z-index: 1;
+}
+
+.projects-section .section-label {
+  color: #e8e9ef;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+}
+
+.projects-section .section-title {
+  color: #f6f7fb;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.projects-section .section-title .dim {
+  color: #d4d7de;
+}
 
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -41,7 +71,9 @@
   content: '';
   position: absolute;
   inset: 1px;
-  background: var(--card);
+  background: color-mix(in srgb, var(--card) 58%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-radius: 17px;
   z-index: -1;
   transition: background 0.4s ease;

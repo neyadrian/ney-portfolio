@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { Home, User, Code2, Briefcase, Mail } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Home, User, Code2, Briefcase, Mail, Menu, X } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import LogoTypewriter from "./LogoTypewriter";
 
@@ -10,6 +10,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState("home");
   const [lamp, setLamp] = useState({ x: 0, width: 0 });
+  const [menuOpen, setMenuOpen] = useState(false);
   const lockUntil = useRef(0);
   const innerRef = useRef(null);
   const linkRefs = useRef({});
@@ -28,6 +29,7 @@ export default function Header() {
     if (!el) return;
     lockUntil.current = Date.now() + 900;
     setActiveTab(id);
+    setMenuOpen(false);
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -46,6 +48,14 @@ export default function Header() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 900) setMenuOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   useLayoutEffect(() => {
@@ -122,7 +132,55 @@ export default function Header() {
           <span className="divider">/</span>
           <span className={lang === "pt" ? "active" : ""}>PT</span>
         </button>
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          {menuOpen ? <X size={16} strokeWidth={2.2} /> : <Menu size={16} strokeWidth={2.2} />}
+        </button>
       </div>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="mobile-menu"
+            initial={{ opacity: 0, y: -8, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.96 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {items.map((item) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={item.id}
+                  href={item.url}
+                  className={`mobile-menu-link ${activeTab === item.id ? "active" : ""}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goTo(item.id);
+                  }}
+                >
+                  {activeTab === item.id && (
+                    <span className="mobile-lamp-cap" aria-hidden="true">
+                      <span className="tube-glow g1" />
+                      <span className="tube-glow g2" />
+                      <span className="tube-glow g3" />
+                    </span>
+                  )}
+                  <span className="mobile-menu-icon">
+                    <Icon size={16} strokeWidth={2.4} />
+                  </span>
+                  {item.name}
+                </a>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
