@@ -1,5 +1,5 @@
 /* ============================================
-   THEME TOKENS — dark (default) & light
+   THEME TOKENS — dark
    ============================================ */
 :root {
   --bg: #08090c;
@@ -21,4 +21,3 @@
 
   color-scheme: dark;
 }
-

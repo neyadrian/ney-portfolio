@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 const socials = [
@@ -15,17 +16,41 @@ const socials = [
   },
 ];
 
-function MarqueeRow({ items }) {
-  const loop = [...items, ...items];
+function MagneticPill({ href, children }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const onMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      el.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px) scale(1.05)`;
+    };
+    const onLeave = () => {
+      el.style.transform = "translate(0, 0) scale(1)";
+    };
+
+    el.addEventListener("mousemove", onMove);
+    el.addEventListener("mouseleave", onLeave);
+    return () => {
+      el.removeEventListener("mousemove", onMove);
+      el.removeEventListener("mouseleave", onLeave);
+    };
+  }, []);
+
   return (
-    <div className="footer-marquee-track">
-      {loop.map((item, i) => (
-        <span key={`${item}-${i}`} className="footer-marquee-item">
-          {item}
-          <span className="footer-marquee-dot">✦</span>
-        </span>
-      ))}
-    </div>
+    <a
+      ref={ref}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="footer-pill"
+    >
+      {children}
+    </a>
   );
 }
 
@@ -50,32 +75,22 @@ export default function Footer() {
         NEY
       </div>
 
-      <div className="footer-marquee" aria-hidden="true">
-        <MarqueeRow items={f.marquee} />
-      </div>
-
       <div className="footer-main">
         <h2 className="footer-heading">{f.ready}</h2>
 
-        <nav className="footer-pills" aria-label="Sections">
+        <nav className="footer-nav-text" aria-label="Sections">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="footer-pill">
+            <a key={link.href} href={link.href}>
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="footer-pills footer-pills-social">
+        <div className="footer-pills">
           {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              className="footer-pill footer-pill-sm"
-            >
+            <MagneticPill key={s.label} href={s.href}>
               {s.label}
-            </a>
+            </MagneticPill>
           ))}
         </div>
       </div>

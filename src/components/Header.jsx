@@ -58,6 +58,13 @@ export default function Header() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   useLayoutEffect(() => {
     const nav = innerRef.current;
     const link = linkRefs.current[activeTab];
@@ -147,37 +154,82 @@ export default function Header() {
         {menuOpen && (
           <motion.div
             className="mobile-menu"
-            initial={{ opacity: 0, y: -8, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.96 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: "-18%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-10%" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            {items.map((item) => {
-              const Icon = item.icon;
-              return (
-                <a
+            <div className="mobile-menu-top">
+              <a
+                href="#home"
+                className="mobile-menu-logo"
+                onClick={(e) => {
+                  e.preventDefault();
+                  goTo("home");
+                }}
+              >
+                <LogoTypewriter />
+              </a>
+              <button
+                type="button"
+                className="mobile-menu-close"
+                aria-label="Close menu"
+                onClick={() => setMenuOpen(false)}
+              >
+                <X size={22} strokeWidth={2} />
+              </button>
+            </div>
+
+            <motion.nav
+              className="mobile-menu-nav"
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.09, delayChildren: 0.12 } },
+              }}
+            >
+              {items.map((item) => (
+                <motion.a
                   key={item.id}
                   href={item.url}
                   className={`mobile-menu-link ${activeTab === item.id ? "active" : ""}`}
+                  variants={{
+                    hidden: { opacity: 0, y: 36 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+                  }}
                   onClick={(e) => {
                     e.preventDefault();
                     goTo(item.id);
                   }}
                 >
-                  {activeTab === item.id && (
-                    <span className="mobile-lamp-cap" aria-hidden="true">
-                      <span className="tube-glow g1" />
-                      <span className="tube-glow g2" />
-                      <span className="tube-glow g3" />
-                    </span>
-                  )}
-                  <span className="mobile-menu-icon">
-                    <Icon size={16} strokeWidth={2.4} />
-                  </span>
                   {item.name}
-                </a>
-              );
-            })}
+                </motion.a>
+              ))}
+            </motion.nav>
+
+            <motion.div
+              className="mobile-menu-foot"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.42, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <a href="https://github.com/neyadrian" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <i className="ri-github-line" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ney-adrian-casimiro-oliveira-567b902bb/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i className="ri-linkedin-line" />
+              </a>
+              <a href="https://wa.me/5588993318560" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                <i className="ri-whatsapp-line" />
+              </a>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
