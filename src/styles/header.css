@@ -231,7 +231,7 @@
     padding: calc(18px + env(safe-area-inset-top, 0px)) 8% 36px;
     border: 0;
     border-radius: 0;
-    background: color-mix(in srgb, #08090c 78%, transparent);
+    background: color-mix(in srgb, #08090c 94%, transparent);
     box-shadow: none;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
